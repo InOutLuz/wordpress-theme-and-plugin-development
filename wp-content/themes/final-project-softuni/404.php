@@ -14,7 +14,7 @@
 <div class="not-found-container">
   <img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/404.jpg"></img>
   <p>Oops! The page you are looking for might be in another universe.</p>
-  <p>Return to <a href="/">home</a>.</p>
+  <p>Return to <a href="<?php echo get_home_url('/'); ?>">home</a>.</p>
 </div>
 
 

@@ -45,7 +45,7 @@ https://templatemo.com/tm-589-lugx-gaming
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a href="<?php echo get_home_url('/'); ?>" class="logo">
                             <img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/logo.png" alt="" style="width: 158px;">
                         </a>
                         <!-- ***** Logo End ***** -->
