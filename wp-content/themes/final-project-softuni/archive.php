@@ -60,7 +60,15 @@
   </div>
 </div>
 
-
+<div class="blog-pagination">
+  <?php
+  the_posts_pagination(array(
+    'mid_size'  => 2,
+    'prev_text' => __('Previous', 'softuni'),
+    'next_text' => __('Next', 'softuni'),
+  ));
+  ?>
+</div>
 
 
 <?php get_footer(); ?>
