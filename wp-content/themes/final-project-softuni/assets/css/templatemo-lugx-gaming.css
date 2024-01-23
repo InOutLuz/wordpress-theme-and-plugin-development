@@ -1760,3 +1760,59 @@ body {
 }
 
 @media (max-width: 1200px) {}
+
+/* pagination styling */
+.blog-pagination {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.blog-pagination nav {
+  display: inline-block;
+}
+
+.nav-links {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.page-numbers {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.page-numbers:hover {
+  background-color: #e0e0e0;
+}
+
+.current {
+  background-color: #0073e6;
+  color: #fff;
+  border: 1px solid #0073e6;
+}
+
+.next,
+.prev {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.next:hover,
+.prev:hover {
+  background-color: #e0e0e0;
+}
