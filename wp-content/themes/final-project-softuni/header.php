@@ -51,11 +51,13 @@ https://templatemo.com/tm-589-lugx-gaming
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="shop.html">Our Shop</a></li>
-                            <li><a href="product-details.html">Product Details</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="#">Sign In</a></li>
+                            <?php
+                            wp_nav_menu(array(
+                                'menu'           => 'primary-menu',
+                                'theme_location' => 'primary_menu',
+                                'menu_class'     => 'nav',
+                            ));
+                            ?>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
