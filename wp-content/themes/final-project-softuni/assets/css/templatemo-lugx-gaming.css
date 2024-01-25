@@ -387,6 +387,9 @@ Header Style
 .header-area .main-nav {
   background: transparent;
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .header-area .main-nav .logo {

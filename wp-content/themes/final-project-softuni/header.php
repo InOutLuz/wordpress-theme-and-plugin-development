@@ -50,15 +50,15 @@ https://templatemo.com/tm-589-lugx-gaming
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <?php
-                            wp_nav_menu(array(
-                                'menu'           => 'primary-menu',
-                                'theme_location' => 'primary_menu',
-                                'menu_class'     => 'nav',
-                            ));
-                            ?>
-                        </ul>
+
+                        <?php
+                        wp_nav_menu(array(
+                            'menu'           => 'primary-menu',
+                            'theme_location' => 'primary_menu',
+                            'menu_class'     => 'nav',
+                        ));
+                        ?>
+
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
