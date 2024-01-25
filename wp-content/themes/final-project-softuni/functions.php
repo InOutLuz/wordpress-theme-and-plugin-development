@@ -92,3 +92,26 @@ function final_project_menu_register()
     );
 }
 add_action('after_setup_theme', 'final_project_menu_register');
+
+
+/**
+ * add class to the active anchor of the menu
+ */
+
+function add_active_class_to_menu_link($atts, $item)
+{
+    // Ensure the 'class' key exists in $atts
+    if (!isset($atts['class'])) {
+        $atts['class'] = '';
+    }
+
+    // Check if the current menu item is the active one
+    if (in_array('current-menu-item', $item->classes) || in_array('current_page_item', $item->classes)) {
+        // Add the 'active' class to the existing classes
+        $atts['class'] .= ' active';
+    }
+
+    return $atts;
+}
+
+add_filter('nav_menu_link_attributes', 'add_active_class_to_menu_link', 10, 3);
