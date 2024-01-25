@@ -81,8 +81,8 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="section-heading">
-          <h6>Trending</h6>
-          <h2>Trending Games</h2>
+          <h6>Latest</h6>
+          <h2>Latest Posts</h2>
         </div>
       </div>
       <div class="col-lg-6">
@@ -90,58 +90,25 @@
           <a href="shop.html">View All</a>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="item">
-          <div class="thumb">
-            <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/trending-01.jpg" alt=""></a>
-            <span class="price"><em>$28</em>$20</span>
-          </div>
-          <div class="down-content">
-            <span class="category">Action</span>
-            <h4>Assasin Creed</h4>
-            <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="item">
-          <div class="thumb">
-            <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/trending-02.jpg" alt=""></a>
-            <span class="price">$44</span>
-          </div>
-          <div class="down-content">
-            <span class="category">Action</span>
-            <h4>Assasin Creed</h4>
-            <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="item">
-          <div class="thumb">
-            <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/trending-03.jpg" alt=""></a>
-            <span class="price"><em>$64</em>$44</span>
-          </div>
-          <div class="down-content">
-            <span class="category">Action</span>
-            <h4>Assasin Creed</h4>
-            <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="item">
-          <div class="thumb">
-            <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/trending-04.jpg" alt=""></a>
-            <span class="price">$32</span>
-          </div>
-          <div class="down-content">
-            <span class="category">Action</span>
-            <h4>Assasin Creed</h4>
-            <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-          </div>
-        </div>
-      </div>
+
+      <?php
+      $args = array(
+        'post_type'      => 'post',
+        'posts_per_page' => 8,
+      );
+
+      $query = new WP_Query($args);
+
+      if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+          get_template_part('template-parts/post-content', 'post-content');
+        endwhile;
+        wp_reset_postdata(); // Reset the post data
+      else :
+        echo '<h1>Sorry, there aren\'t any posts yet.</h1>';
+      endif;
+      ?>
+
     </div>
   </div>
 </div>
