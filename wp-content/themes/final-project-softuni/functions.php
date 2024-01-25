@@ -115,3 +115,23 @@ function add_active_class_to_menu_link($atts, $item)
 }
 
 add_filter('nav_menu_link_attributes', 'add_active_class_to_menu_link', 10, 3);
+
+/**
+ * register sidebar for copyright
+ */
+
+function register_copyright_sidebar()
+{
+    register_sidebar(
+        array(
+            'id'            => 'copyright',
+            'name'          => __('Copyright'),
+            'description'   => __('This is the copyright sidebar'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+}
+add_action('widgets_init', 'register_copyright_sidebar');
