@@ -11,7 +11,9 @@ function custom_theme_options_page()
         'Custom Theme Options',
         'manage_options',
         'customtheme',
-        'custom_theme_options_page_html'
+        'custom_theme_options_page_html',
+        'dashicons-smiley',
+        1
     );
 }
 
