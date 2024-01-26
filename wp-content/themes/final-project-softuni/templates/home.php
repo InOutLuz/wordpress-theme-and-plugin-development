@@ -12,11 +12,38 @@
         <div class="row">
             <div class="col-lg-6 align-self-center">
                 <div class="caption header-text">
-                    <h6>Welcome to lugx</h6>
-                    <h2>BEST GAMING SITE EVER!</h2>
-                    <p>LUGX Gaming is free Bootstrap 5 HTML CSS website template for your gaming websites. You can
+                    <?php
+                    if (get_option('custom_hero_titles')['custom_subtitle'] == "") {
+                        // If the option is not set, display the default subtitle
+                        echo "<h6>Welcome to lugx</h6>";
+                    } else {
+                        // If the option is set, display the custom subtitle
+                        echo "<h6>" . esc_html(get_option('custom_hero_titles')['custom_subtitle']) . "</h6>";
+                    }
+                    ?>
+
+                    <?php
+                    if (get_option('custom_hero_titles')['custom_title'] == "") {
+                        // If the option is not set, display the default subtitle
+                        echo "<h2>BEST GAMING SITE EVER!</h2>";
+                    } else {
+                        // If the option is set, display the custom subtitle
+                        echo "<h2>" . esc_html(get_option('custom_hero_titles')['custom_title']) . "</h2>";
+                    }
+                    ?>
+
+                    <?php
+                    if (get_option('custom_hero_titles')['custom_description'] == "") {
+                        // If the option is not set, display the default subtitle
+                        echo "<p>LUGX Gaming is free Bootstrap 5 HTML CSS website template for your gaming websites. You can
                         download and use this layout for commercial purposes. Please tell your friends about
-                        TemplateMo.</p>
+                        TemplateMo.</p>";
+                    } else {
+                        // If the option is set, display the custom subtitle
+                        echo "<p>" . esc_html(get_option('custom_hero_titles')['custom_description']) . "</p>";
+                    }
+                    ?>
+
                     <div class="search-input">
                         <form id="search" action="#">
                             <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />

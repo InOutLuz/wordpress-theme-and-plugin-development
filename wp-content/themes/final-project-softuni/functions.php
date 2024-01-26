@@ -57,6 +57,11 @@ function final_project_softuni_assets($hook)
 add_action('wp_enqueue_scripts', 'final_project_softuni_assets');
 
 /**
+ * Include the file containing custom theme options
+ */
+require_once get_template_directory() . '/custom-theme-options.php';
+
+/**
  * adding theme support for featured image
  */
 
