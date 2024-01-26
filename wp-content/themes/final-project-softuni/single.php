@@ -63,16 +63,25 @@
                 }
                 echo trim($output, $separator);
               } ?>
+
               <h2>Related Posts</h2>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="main-button">
-              <a href="shop.html">View All</a>
+
+              <?php
+              $related_categories = wp_get_post_categories(get_the_ID()); // Get categories of the current post
+              // Generate URL with related category parameters
+              $related_category_url = esc_url(add_query_arg('related_categories', implode(',', $related_categories), site_url('/related-posts')));
+              ?>
+
+              <a href="<?php echo $related_category_url; ?>">View All</a>
             </div>
           </div>
           <?php
-          $related_categories = wp_get_post_categories(get_the_ID()); // Get categories of the current post
+
+
 
           $args = array(
             'post_type'      => 'post',
