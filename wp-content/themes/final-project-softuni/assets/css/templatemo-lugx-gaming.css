@@ -1832,3 +1832,16 @@ body {
   margin-right: auto;
   margin-top: 150px;
 }
+
+/* single post content */
+
+.single-margin-top {
+  margin-top: 50px;
+}
+
+.single-post-category-link {
+  color: #ee626b;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
