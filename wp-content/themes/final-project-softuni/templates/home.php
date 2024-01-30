@@ -54,7 +54,7 @@
             </div>
             <div class="col-lg-4 offset-lg-2">
                 <div class="right-image">
-                    <img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/banner-image.jpg" alt="">
+                    <img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/banner-image.jpg" alt="">
                     <span class="price">$22</span>
                     <span class="offer">-40%</span>
                 </div>
@@ -70,7 +70,7 @@
                 <a href="#">
                     <div class="item">
                         <div class="image">
-                            <img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/featured-01.png" alt="" style="max-width: 44px;">
+                            <img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/featured-01.png" alt="" style="max-width: 44px;">
                         </div>
                         <h4>Free Storage</h4>
                     </div>
@@ -80,7 +80,7 @@
                 <a href="#">
                     <div class="item">
                         <div class="image">
-                            <img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/featured-02.png" alt="" style="max-width: 44px;">
+                            <img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/featured-02.png" alt="" style="max-width: 44px;">
                         </div>
                         <h4>User More</h4>
                     </div>
@@ -90,7 +90,7 @@
                 <a href="#">
                     <div class="item">
                         <div class="image">
-                            <img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/featured-03.png" alt="" style="max-width: 44px;">
+                            <img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/featured-03.png" alt="" style="max-width: 44px;">
                         </div>
                         <h4>Reply Ready</h4>
                     </div>
@@ -100,7 +100,7 @@
                 <a href="#">
                     <div class="item">
                         <div class="image">
-                            <img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/featured-04.png" alt="" style="max-width: 44px;">
+                            <img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/featured-04.png" alt="" style="max-width: 44px;">
                         </div>
                         <h4>Easy Layout</h4>
                     </div>
@@ -164,7 +164,7 @@
             <div class="col-lg-2 col-md-6 col-sm-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/top-game-01.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/top-game-01.jpg" alt=""></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Adventure</span>
@@ -176,7 +176,7 @@
             <div class="col-lg-2 col-md-6 col-sm-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/top-game-02.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/top-game-02.jpg" alt=""></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Adventure</span>
@@ -188,7 +188,7 @@
             <div class="col-lg-2 col-md-6 col-sm-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/top-game-03.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/top-game-03.jpg" alt=""></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Adventure</span>
@@ -200,7 +200,7 @@
             <div class="col-lg-2 col-md-6 col-sm-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/top-game-04.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/top-game-04.jpg" alt=""></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Adventure</span>
@@ -212,7 +212,7 @@
             <div class="col-lg-2 col-md-6 col-sm-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/top-game-05.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/top-game-05.jpg" alt=""></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Adventure</span>
@@ -224,7 +224,7 @@
             <div class="col-lg-2 col-md-6 col-sm-6">
                 <div class="item">
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/top-game-06.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/top-game-06.jpg" alt=""></a>
                     </div>
                     <div class="down-content">
                         <span class="category">Adventure</span>
@@ -250,7 +250,7 @@
                 <div class="item">
                     <h4>Action</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/categories-01.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/categories-01.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -258,7 +258,7 @@
                 <div class="item">
                     <h4>Action</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/categories-05.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/categories-05.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -266,7 +266,7 @@
                 <div class="item">
                     <h4>Action</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/categories-03.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/categories-03.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -274,7 +274,7 @@
                 <div class="item">
                     <h4>Action</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/categories-04.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/categories-04.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -282,7 +282,7 @@
                 <div class="item">
                     <h4>Action</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="http://localhost/softuni/wp-content/themes/final-project-softuni/assets/images/categories-05.jpg" alt=""></a>
+                        <a href="product-details.html"><img src="<?php echo get_home_url('/'); ?>/wp-content/themes/final-project-softuni/assets/images/categories-05.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
