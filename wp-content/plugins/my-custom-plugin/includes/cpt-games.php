@@ -34,26 +34,66 @@ function mp_game_cpt() {
 	);
 
 	$args = array(
-		'labels'             => $labels,
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'game' ),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => 2,
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
-        'show_in_admin_bar'     => true,
+		'labels'                => $labels,
+		'public'                => true,
+		'publicly_queryable'    => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'query_var'             => true,
+		'rewrite'               => array( 'slug' => 'game' ),
+		'capability_type'       => 'post',
+		'has_archive'           => true,
+		'hierarchical'          => false,
+		'menu_position'         => 2,
         'show_in_rest'          => true,
         'menu_icon'             => 'dashicons-games',
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'revisions' ),
 	);
 
 	register_post_type( 'game', $args );
 }
 
 add_action( 'init', 'mp_game_cpt' );
+
+
+
+/**
+ * Register a 'genre' taxonomy for post type 'games'.
+ */
+function mp_game_genre_taxonomy() {
+
+	$labels = array(
+		'name'                       => _x( 'Genres', 'taxonomy general name', 'textdomain' ),
+		'singular_name'              => _x( 'Genre', 'taxonomy singular name', 'textdomain' ),
+		'search_items'               => __( 'Search Genres', 'textdomain' ),
+		'popular_items'              => __( 'Popular Genres', 'textdomain' ),
+		'all_items'                  => __( 'All Genres', 'textdomain' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Genre', 'textdomain' ),
+		'update_item'                => __( 'Update Genre', 'textdomain' ),
+		'add_new_item'               => __( 'Add New Genre', 'textdomain' ),
+		'new_item_name'              => __( 'New Genre Name', 'textdomain' ),
+		'separate_items_with_commas' => __( 'Separate genres with commas', 'textdomain' ),
+		'add_or_remove_items'        => __( 'Add or remove genres', 'textdomain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used genres', 'textdomain' ),
+		'not_found'                  => __( 'No genres found.', 'textdomain' ),
+		'menu_name'                  => __( 'Genres', 'textdomain' ),
+	);
+
+	$args = array(
+		'hierarchical'          => true,
+        'show_in_rest'          => true,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_admin_column'     => true,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array( 'slug' => 'genre' ),
+	);
+
+    register_taxonomy( 'genre', 'game', $args );
+}
+add_action( 'init', 'mp_game_genre_taxonomy', 0 );
 
 ?>
