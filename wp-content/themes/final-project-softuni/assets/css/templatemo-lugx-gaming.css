@@ -1845,3 +1845,10 @@ body {
   text-transform: uppercase;
   font-weight: 700;
 }
+
+.section.categories.related-games .category,
+.section.categories.related-games .category a {
+  color: white;
+  font-size: 12px;
+  margin-top: 10px;
+}
