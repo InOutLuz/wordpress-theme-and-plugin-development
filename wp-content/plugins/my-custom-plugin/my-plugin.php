@@ -14,3 +14,6 @@
  * Text Domain:       softuni
  * Domain Path:       /languages
  */
+
+
+ include 'includes/cpt-games.php';
