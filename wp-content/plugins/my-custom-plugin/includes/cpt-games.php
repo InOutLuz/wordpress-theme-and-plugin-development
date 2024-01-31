@@ -34,20 +34,20 @@ function mp_game_cpt() {
 	);
 
 	$args = array(
-		'labels'                => $labels,
-		'public'                => true,
-		'publicly_queryable'    => true,
-		'show_ui'               => true,
-		'show_in_menu'          => true,
-		'query_var'             => true,
-		'rewrite'               => array( 'slug' => 'game' ),
-		'capability_type'       => 'post',
-		'has_archive'           => true,
-		'hierarchical'          => false,
-		'menu_position'         => 2,
-        'show_in_rest'          => true,
-        'menu_icon'             => 'dashicons-games',
-		'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'revisions' ),
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'game' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 2,
+		'show_in_rest'       => true,
+		'menu_icon'          => 'dashicons-games',
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'revisions' ),
 	);
 
 	register_post_type( 'game', $args );
@@ -83,7 +83,7 @@ function mp_game_genre_taxonomy() {
 
 	$args = array(
 		'hierarchical'          => true,
-        'show_in_rest'          => true,
+		'show_in_rest'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_admin_column'     => true,
@@ -92,8 +92,6 @@ function mp_game_genre_taxonomy() {
 		'rewrite'               => array( 'slug' => 'genre' ),
 	);
 
-    register_taxonomy( 'genre', 'game', $args );
+	register_taxonomy( 'genre', 'game', $args );
 }
 add_action( 'init', 'mp_game_genre_taxonomy', 0 );
-
-?>

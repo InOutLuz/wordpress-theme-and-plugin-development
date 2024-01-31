@@ -1,5 +1,5 @@
 <?php
- /*
+/*
  * Plugin Name:       My First Plugin
  * Plugin URI:        https://github.com/InOutLuz/wordpress-theme-and-plugin-development
  * Description:       My first plugin for the course WordPress for developers in Softuni
@@ -16,8 +16,8 @@
  */
 
 
- include 'includes/cpt-games.php';
+require 'includes/cpt-games.php';
 
- include 'includes/custom-plugin-options.php';
+require 'includes/custom-plugin-options.php';
 
- include 'includes/functions.php';
+require 'includes/functions.php';
