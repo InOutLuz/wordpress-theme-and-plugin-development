@@ -21,7 +21,9 @@
              if ( has_post_thumbnail() ) {
                 the_post_thumbnail();
                 } else { ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/awaiting-image.jpg" alt="<?php the_title(); ?>" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+                 <?php get_template_part('template-parts/fallback-svg-content', 'fallback-svg-content'); ?>
+                </svg>
                 <?php } 
             ?>
         </div>
