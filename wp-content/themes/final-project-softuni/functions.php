@@ -65,14 +65,11 @@ require_once get_template_directory() . '/custom-theme-options.php';
  * adding theme support for featured image
  */
 
-add_theme_support('post-thumbnails');
-
 if (function_exists('add_theme_support')) {
     add_theme_support('post-thumbnails');
     set_post_thumbnail_size(300, 999, true); // default Featured Image dimensions (cropped)
-
-
 }
+
 
 /**
  * adding link to all featured images
