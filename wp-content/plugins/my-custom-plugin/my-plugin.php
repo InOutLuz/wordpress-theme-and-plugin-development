@@ -19,3 +19,5 @@
  include 'includes/cpt-games.php';
 
  include 'includes/custom-plugin-options.php';
+
+ include 'includes/functions.php';
