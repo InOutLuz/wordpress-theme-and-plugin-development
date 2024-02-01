@@ -1,3 +1,8 @@
+<?php
+/**
+ * Template Name: Related Posts
+ */
+?>
 <?php get_header(); ?>
 
 <div class="page-heading header-text">
