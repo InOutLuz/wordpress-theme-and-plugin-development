@@ -32,7 +32,19 @@
 		</div>
 		<div class="col-lg-6 align-self-center">
 		<h4><?php the_title(); ?></h4>
-		<span class="price"><em>$28</em> $22</span>
+		<?php
+		$price              = get_post_meta( get_the_ID(), '_game_price', true );
+		$reduced_from_price = get_post_meta( get_the_ID(), '_game_reduced_from_price', true );
+		?>
+		<span class="price">
+				<?php if ( ! empty( $reduced_from_price ) && ! empty( $price ) ) : ?>
+					<em><?php echo '$' . $reduced_from_price; ?></em>
+				<?php endif; ?>
+				<?php if ( ! empty( $price ) ) : ?>
+					<?php echo '$' . $price; ?>
+				<?php endif; ?>
+		</span>
+
 		<p><?php the_content(); ?></p>
 		<form id="qty" action="#">
 			<input type="qty" class="form-control" id="1" aria-describedby="quantity" placeholder="1">

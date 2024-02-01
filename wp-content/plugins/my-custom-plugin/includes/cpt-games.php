@@ -95,3 +95,54 @@ function mp_game_genre_taxonomy() {
 	register_taxonomy( 'genre', 'game', $args );
 }
 add_action( 'init', 'mp_game_genre_taxonomy', 0 );
+
+/**
+ * Add metaboxes for price and reduced price to the 'game' post type.
+ */
+function mp_game_price_metaboxes() {
+	add_meta_box(
+		'mp_game_price_metabox',
+		'Price Information',
+		'mp_game_price_metabox_callback',
+		'game',
+		'side',
+		'default',
+	);
+}
+
+add_action( 'add_meta_boxes', 'mp_game_price_metaboxes' );
+
+/**
+ * Callback function to display the metabox content for price and reduced price
+ */
+function mp_game_price_metabox_callback( $post ) {
+	// Retrieve the current values of price and reduced price
+	$price         = get_post_meta( $post->ID, '_game_price', true );
+	$reduced_price = get_post_meta( $post->ID, '_game_reduced_from_price', true );
+	?>
+	<div class="game-metabox">
+	<label class="game-metabox" for="game_price">New Price:</label>
+	<input class="game-metabox" type="text" id="game_price" name="game_price" value="<?php echo esc_attr( $price ); ?>" /><br />
+
+	<label class="game-metabox reduced-price-label" for="game_reduced_from_price">Reduced from Price:</label>
+	<input class="game-metabox" type="text" id="game_reduced_from_price" name="game_reduced_from_price" value="<?php echo esc_attr( $reduced_price ); ?>" /><br />
+</div>
+	<?php
+}
+
+/**
+ * Save metabox data
+ */
+function mp_save_game_price_metaboxes( $post_id ) {
+
+	// Update the meta field in the database.
+	if ( isset( $_POST['game_price'] ) ) {
+		update_post_meta( $post_id, '_game_price', sanitize_text_field( $_POST['game_price'] ) );
+	}
+
+	if ( isset( $_POST['game_reduced_from_price'] ) ) {
+		update_post_meta( $post_id, '_game_reduced_from_price', sanitize_text_field( $_POST['game_reduced_from_price'] ) );
+	}
+}
+
+add_action( 'save_post', 'mp_save_game_price_metaboxes' );

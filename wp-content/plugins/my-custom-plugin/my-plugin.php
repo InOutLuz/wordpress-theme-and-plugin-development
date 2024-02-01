@@ -21,3 +21,12 @@ require 'includes/cpt-games.php';
 require 'includes/custom-plugin-options.php';
 
 require 'includes/functions.php';
+
+/**
+ * Enqueue styles for custom metaboxes.
+ */
+function mp_enqueue_admin_styles() {
+	wp_enqueue_style( 'mp-admin-styles', plugins_url( '/assets/admin-styles.css', __FILE__ ) );
+}
+
+add_action( 'admin_enqueue_scripts', 'mp_enqueue_admin_styles' );

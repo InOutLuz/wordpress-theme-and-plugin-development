@@ -1,0 +1,25 @@
+/* Custom styles for game metaboxes */
+.game-metabox {
+    margin-bottom: 20px;
+}
+
+.game-metabox label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.game-metabox input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Optionally, you can style the labels differently */
+.game-metabox .reduced-price-label {
+    color: #ff0000;
+    /* Red color for reduced price label */
+}
