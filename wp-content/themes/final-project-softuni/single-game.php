@@ -53,7 +53,6 @@
 			<button type="submit"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
 		</form>
 		<ul>
-			<li><span>Game ID:</span> COD MMII</li>
 			<li>
 	<span>Genre:</span>
 	<?php
@@ -69,9 +68,7 @@
 		echo implode( ', ', $genre_links );
 	}
 	?>
-</li>
-
-			<li><span>Multi-tags:</span> <a href="#">War</a>, <a href="#">Battle</a>, <a href="#">Royal</a></li>
+			</li>
 		</ul>
 		</div>
 		<div class="col-lg-12">
