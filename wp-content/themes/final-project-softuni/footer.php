@@ -6,6 +6,7 @@
 		}
 		?>
 	</div>
+	<div class="container github"><?php echo do_shortcode( '[github]' ); ?></div>
 </footer>
 
 <?php wp_footer(); ?>
