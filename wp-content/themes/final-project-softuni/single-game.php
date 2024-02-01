@@ -17,14 +17,16 @@
 		<div class="col-lg-6">
 		<div class="left-image">
 		<?php
-			// display the post thumbnail if there isn't one display the awaiting image photo
+			// display the post thumbnail if there isn't one display the awaiting image svg
 		if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
+			the_post_thumbnail( 'large' );
 		} else {
 			?>
+		<div class="svg-container">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
 				<?php get_template_part( 'template-parts/fallback-svg-content', 'fallback-svg-content' ); ?>
 				</svg>
+		</div>
 			<?php
 		}
 		?>
