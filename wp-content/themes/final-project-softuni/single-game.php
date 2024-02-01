@@ -128,52 +128,55 @@
 		</div>
 		</div>
 		<div class="col-lg-6">
-		<div class="main-button">
-			<a href="shop.html">View All</a>
-		</div>
-		</div>
-		<div class="col-lg col-sm-6 col-xs-12">
-		<div class="item">
-			<h4>Action</h4>
-			<div class="thumb">
-			<a href="product-details.html"><img src="assets/images/categories-01.jpg" alt=""></a>
+			<div class="main-button">
+
+				<?php
+				$related_genres = wp_get_post_terms( get_the_ID(), 'genre' ); // Get terms of the 'genre' taxonomy for the current post
+
+				$related_genres_url = esc_url( add_query_arg( 'related_genres', implode( ',', $related_genres ), site_url( '/related-posts' ) ) );
+				?>
+
+				<a href="<?php echo $related_gernes_url; ?>">View All</a>
 			</div>
-		</div>
-		</div>
-		<div class="col-lg col-sm-6 col-xs-12">
-		<div class="item">
-			<h4>Action</h4>
-			<div class="thumb">
-			<a href="product-details.html"><img src="assets/images/categories-05.jpg" alt=""></a>
 			</div>
-		</div>
-		</div>
-		<div class="col-lg col-sm-6 col-xs-12">
-		<div class="item">
-			<h4>Action</h4>
-			<div class="thumb">
-			<a href="product-details.html"><img src="assets/images/categories-03.jpg" alt=""></a>
-			</div>
-		</div>
-		</div>
-		<div class="col-lg col-sm-6 col-xs-12">
-		<div class="item">
-			<h4>Action</h4>
-			<div class="thumb">
-			<a href="product-details.html"><img src="assets/images/categories-04.jpg" alt=""></a>
-			</div>
-		</div>
-		</div>
-		<div class="col-lg col-sm-6 col-xs-12">
-		<div class="item">
-			<h4>Action</h4>
-			<div class="thumb">
-			<a href="product-details.html"><img src="assets/images/categories-05.jpg" alt=""></a>
-			</div>
-		</div>
-		</div>
+		<?php
+		$genre_ids = array(); // Initialize an array to store genre IDs
+		// Extract genre IDs from the terms
+		foreach ( $related_genres as $genre ) {
+			$genre_ids[] = $genre->term_id;
+		}
+
+		// Query related games
+		$args = array(
+			'post_type'      => 'game',
+			'posts_per_page' => 4,
+			'tax_query'      => array(
+				array(
+					'taxonomy' => 'genre',
+					'field'    => 'term_id',
+					'terms'    => $genre_ids, // Pass the array of term IDs
+				),
+			),
+			'post__not_in'   => array( get_the_ID() ), // Exclude the current post from the related posts
+		);
+
+			$query = new WP_Query( $args );
+
+		if ( $query->have_posts() ) :
+			while ( $query->have_posts() ) :
+				$query->the_post();
+				get_template_part( 'template-parts/games-cards', 'games-cards' );
+				endwhile;
+			wp_reset_postdata(); // Reset the post data
+			else :
+				echo '<h1>Sorry, there aren\'t any related posts yet.</h1>';
+			endif;
+			?>
+			
 	</div>
 	</div>
+</div>
+</div>
 </div>
 
 <?php get_footer(); ?>
