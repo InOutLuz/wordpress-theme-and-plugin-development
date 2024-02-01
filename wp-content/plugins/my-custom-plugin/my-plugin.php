@@ -23,6 +23,17 @@ require 'includes/custom-plugin-options.php';
 require 'includes/functions.php';
 
 /**
+ * enqueue  styles for frontend
+ */
+function mp_enqueue_styles() {
+
+	wp_enqueue_style( 'mp-main-styles', plugins_url( '/assets/css/main.css', __FILE__ ) );
+}
+
+// Hook the function to the wp_enqueue_scripts action
+add_action( 'wp_enqueue_scripts', 'mp_enqueue_styles' );
+
+/**
  * Enqueue styles for custom metaboxes.
  */
 function mp_enqueue_admin_styles() {
