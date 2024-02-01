@@ -118,33 +118,42 @@
 	</div>
 </div>
 
-<div class="section categories related-games">
+<div class="section most-played">
 	<div class="container">
 	<div class="row">
 		<div class="col-lg-6">
 		<div class="section-heading">
-			<h6>Action</h6>
+		<?php
+		$genres    = get_the_terms( get_the_ID(), 'genre' ); // Get terms of the 'genre' taxonomy for the current post
+		$separator = ', ';
+		$output    = '';
+		if ( ! empty( $genres ) ) {
+			foreach ( $genres as $genre ) {
+				$output .= '<a class="single-post-category-link" href="' . esc_url( get_term_link( $genre ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'softuni' ), $genre->name ) ) . '">' . esc_html( $genre->name ) . '</a>' . $separator;
+			}
+			echo trim( $output, $separator );
+		}
+		?>
 			<h2>Related Games</h2>
 		</div>
 		</div>
 		<div class="col-lg-6">
 			<div class="main-button">
+		<?php
+		$related_genres = get_the_terms( get_the_ID(), 'genre' ); // Get terms of the genre taxonomy for the current post
+		$genre_ids      = array(); // Initialize an array to store genre IDs
+		if ( ! empty( $related_genres ) ) {
+			foreach ( $related_genres as $genre ) {
+				$genre_ids[] = $genre->term_id;
+			}
+		}
 
-				<?php
-				$related_genres = wp_get_post_terms( get_the_ID(), 'genre' ); // Get terms of the 'genre' taxonomy for the current post
-
-				$related_genres_url = esc_url( add_query_arg( 'related_genres', implode( ',', $related_genres ), site_url( '/related-posts' ) ) );
-				?>
-
-				<a href="<?php echo $related_gernes_url; ?>">View All</a>
+		$related_categories_url = esc_url( add_query_arg( 'related_genres', implode( ',', $genre_ids ), site_url( '/related-games' ) ) );
+		?>
+		<a href="<?php echo $related_categories_url; ?>">View All</a>
 			</div>
 			</div>
 		<?php
-		$genre_ids = array(); // Initialize an array to store genre IDs
-		// Extract genre IDs from the terms
-		foreach ( $related_genres as $genre ) {
-			$genre_ids[] = $genre->term_id;
-		}
 
 		// Query related games
 		$args = array(
@@ -154,7 +163,7 @@
 				array(
 					'taxonomy' => 'genre',
 					'field'    => 'term_id',
-					'terms'    => $genre_ids, // Pass the array of term IDs
+					'terms'    => $genre_ids,
 				),
 			),
 			'post__not_in'   => array( get_the_ID() ), // Exclude the current post from the related posts
