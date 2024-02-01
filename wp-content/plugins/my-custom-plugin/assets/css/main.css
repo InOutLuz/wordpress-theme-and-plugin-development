@@ -1,0 +1,16 @@
+/**
+*sale end shortcode styling
+*/
+.sale-ends {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.time-is-running-img {
+    max-width: 100px;
+}
+
+.time-is-running-text {
+    font-weight: 800;
+
+}
