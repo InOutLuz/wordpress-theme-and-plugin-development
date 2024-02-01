@@ -154,7 +154,7 @@
 			<div class="col-lg-6">
 				<div class="section-heading">
 					<h6>TOP GAMES</h6>
-					<h2>Most Played</h2>
+					<h2>Most Recent</h2>
 				</div>
 			</div>
 			<div class="col-lg-6">
@@ -165,7 +165,7 @@
 			<?php
 			$args = array(
 				'post_type'      => 'game',
-				'posts_per_page' => 8,
+				'posts_per_page' => 6,
 			);
 
 			$query = new WP_Query( $args );
