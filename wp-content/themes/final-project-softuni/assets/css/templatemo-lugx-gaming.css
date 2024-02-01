@@ -1022,7 +1022,7 @@ Most Played Style
     transition: all .3s;
 }
 
-.most-played .item .down-content a {
+.most-played .item .down-content a:not(.category) {
     position: absolute;
     display: inline-block;
     text-align: center;
@@ -1041,11 +1041,16 @@ Most Played Style
     transition: all .3s;
 }
 
+.most-played .item .down-content .category a {
+    color: #ee626b;
+}
+
+
 .most-played .item:hover .down-content h4 {
     color: #0071f8;
 }
 
-.most-played .item:hover .down-content a {
+.most-played .item:hover .down-content a:not(.category) {
     background-color: #0071f8;
 }
 
