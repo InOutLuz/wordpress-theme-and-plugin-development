@@ -26,18 +26,22 @@ require 'includes/functions.php';
  * enqueue  styles for frontend
  */
 function mp_enqueue_styles() {
+	$style_version = filemtime( plugin_dir_path( __FILE__ ) . 'assets/css/main.css' ); // Get file modification time as version
 
-	wp_enqueue_style( 'mp-main-styles', plugins_url( '/assets/css/main.css', __FILE__ ) );
+	wp_enqueue_style( 'mp-main-styles', plugins_url( '/assets/css/main.css', __FILE__ ), array(), $style_version );
 }
 
 // Hook the function to the wp_enqueue_scripts action
 add_action( 'wp_enqueue_scripts', 'mp_enqueue_styles' );
 
+
 /**
  * Enqueue styles for custom metaboxes.
  */
 function mp_enqueue_admin_styles() {
-	wp_enqueue_style( 'mp-admin-styles', plugins_url( '/assets/css/admin-styles.css', __FILE__ ) );
+	$admin_style_version = filemtime( plugin_dir_path( __FILE__ ) . 'assets/css/admin-styles.css' ); // Get file modification time as version
+
+	wp_enqueue_style( 'mp-admin-styles', plugins_url( '/assets/css/admin-styles.css', __FILE__ ), array(), $admin_style_version );
 }
 
 add_action( 'admin_enqueue_scripts', 'mp_enqueue_admin_styles' );
