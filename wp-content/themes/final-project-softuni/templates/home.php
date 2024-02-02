@@ -115,8 +115,37 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="section-heading">
-					<h6>Latest</h6>
-					<h2>Latest Posts</h2>
+					<h6>
+					<?php
+					// Get the value of the field from ACF
+					$latest_posts_subtitle = get_field( 'latest_posts_subtitle' );
+
+					// Check if the field has a value and display the additional information if it does
+					if ( $latest_posts_subtitle ) {
+
+						// Output the value
+						echo $latest_posts_subtitle;
+					} else {
+						echo 'Latest';
+					}
+
+					?>
+					</h6>
+					<h2>
+					<?php
+					// Get the value of the field from ACF
+					$latest_posts_title = get_field( 'latest_posts_title' );
+
+					// Check if the field has a value and display the additional information if it does
+					if ( $latest_posts_title ) {
+
+						// Output the value
+						echo $latest_posts_title;
+					} else {
+						echo 'Latest Posts';
+					}
+					?>
+					</h2>
 				</div>
 			</div>
 			<div class="col-lg-6">
@@ -153,8 +182,37 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="section-heading">
-					<h6>TOP GAMES</h6>
-					<h2>Most Recent</h2>
+					<h6>
+				<?php
+					// Get the value of the field from ACF
+					$games_subtitle = get_field( 'games_subtitle' );
+
+					// Check if the field has a value and display the additional information if it does
+				if ( $games_subtitle ) {
+
+					// Output the value
+					echo $games_subtitle;
+				} else {
+					echo 'Latest';
+				}
+
+				?>
+					</h6>
+					<h2>
+					<?php
+					// Get the value of the field from ACF
+					$games_title = get_field( 'games_title' );
+
+					// Check if the field has a value and display the additional information if it does
+					if ( $games_title ) {
+
+						// Output the value
+						echo $games_title;
+					} else {
+						echo 'Most Recent Games';
+					}
+					?>
+					</h2>
 				</div>
 			</div>
 			<div class="col-lg-6">
@@ -189,8 +247,37 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<div class="section-heading">
-					<h6>Categories</h6>
-					<h2>Top Categories</h2>
+				<h6>
+				<?php
+					// Get the value of the field from ACF
+					$categories_subtitle = get_field( 'categories_subtitle' );
+
+					// Check if the field has a value and display the additional information if it does
+				if ( $categories_subtitle ) {
+
+					// Output the value
+					echo $categories_subtitle;
+				} else {
+					echo 'CATEGOREIS';
+				}
+
+				?>
+					</h6>
+					<h2>
+					<?php
+					// Get the value of the field from ACF
+					$categories_title = get_field( 'categories_title' );
+
+					// Check if the field has a value and display the additional information if it does
+					if ( $categories_title ) {
+
+						// Output the value
+						echo $categories_title;
+					} else {
+						echo 'Top Categories';
+					}
+					?>
+					</h2>
 				</div>
 			</div>
 			<div class="col-lg col-sm-6 col-xs-12">
