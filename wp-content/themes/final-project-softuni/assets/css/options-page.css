@@ -43,3 +43,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #005e87;
 }
+
+.important-note {
+    color: red;
+}
