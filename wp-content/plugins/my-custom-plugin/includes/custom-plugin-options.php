@@ -27,7 +27,7 @@ function custom_plugin_options_page_html() {
 			<?php do_settings_sections( 'custom_plugin_options_group' ); ?>
 			<table class="form-table">
 				<tr valign="top">
-					<th scope="row">Text for SVG:</th>
+					<th scope="row">Text for fallback SVG:</th>
 					<td><input type="text" name="custom_plugin_text" value="<?php echo esc_attr( get_option( 'custom_plugin_text' ) ); ?>" /></td>
 				</tr>
 			</table>
