@@ -237,3 +237,75 @@ function load_custom_wp_admin_style( $hook ) {
 	wp_enqueue_style( 'custom_wp_admin_css', get_template_directory_uri() . '/assets/css/options-page.css', array(), $style_version );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
+
+
+
+/**
+ * add the actions for load more function
+ */
+add_action( 'wp_ajax_load_more_games', 'load_more_games' );
+add_action( 'wp_ajax_nopriv_load_more_games', 'load_more_games' );
+
+/**
+ * register the query for the ajax function
+ */
+function load_more_games() {
+	$page = isset( $_POST['page'] ) ? $_POST['page'] : 1; // Get the current page number
+
+	$args = array(
+		'post_type'      => 'game',
+		'posts_per_page' => 6,
+		'paged'          => $page,
+	);
+
+	$query = new WP_Query( $args );
+
+	if ( $query->have_posts() ) :
+		while ( $query->have_posts() ) :
+			$query->the_post();
+			get_template_part( 'template-parts/games-cards', 'games-cards' );
+		endwhile;
+		wp_reset_postdata();
+
+		// Check if there are more pages
+		$next_page  = $page + 1;
+		$next_query = new WP_Query(
+			array(
+				'post_type'      => 'game',
+				'posts_per_page' => 6,
+				'paged'          => $next_page,
+			)
+		);
+
+		if ( $next_query->have_posts() ) {
+			// Set header indicating more posts
+			header( 'Has-More-Posts: true' );
+		} else {
+			// Set header indicating no more posts
+			header( 'Has-More-Posts: false' );
+		}
+	endif;
+
+	wp_die();
+}
+
+
+
+/**
+ * Enque the load more ajax script
+ */
+function enqueue_load_more_script() {
+	$script_url     = get_template_directory() . '/assets/js/load-more.js';
+	$script_version = filemtime( $script_url ); // Get file modification time as version
+
+	wp_enqueue_script( 'load-more-script', get_template_directory_uri() . '/assets/js/load-more.js', array(), $script_version, true );
+	wp_localize_script(
+		'load-more-script',
+		'load_more_data',
+		array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+		)
+	);
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_load_more_script' );

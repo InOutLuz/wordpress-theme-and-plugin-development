@@ -1875,3 +1875,27 @@ body {
 .github a:hover {
     text-decoration: underline;
 }
+
+.load-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ee626b;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 50px;
+}
+
+.load-more-button:hover {
+    background-color: #007aff;
+}
+
+.most-played.games-page {
+    padding-bottom: 50px;
+}
