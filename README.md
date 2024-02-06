@@ -20,7 +20,6 @@ The plugin registers a shortcode which accepts 3 attributes for day / month / ye
 
 
 @To do:
-Think of appropriate function in the child theme functions.php
 Figure out how to set category featured images and dynamically loop the categories on the homepage
 Dynamize the subscribe section on the homepage and the entire contact page
 Deploy the project on a server
