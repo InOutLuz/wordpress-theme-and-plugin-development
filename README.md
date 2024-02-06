@@ -1,5 +1,6 @@
 # wordpress-theme-and-plugin-development
 This is my final project for the course WordPress for developers in Softuni
+Demo url: https://hands123.co.uk/softuni/
 
 It contains a custom WordPress theme and plugin. For the theme I'm using free html template designed by TemplateMo.
 There are separate templates for Home, Blog, Contact, Related Posts and Related Games pages.
@@ -22,7 +23,6 @@ The plugin registers a shortcode which accepts 3 attributes for day / month / ye
 @To do:
 Figure out how to set category featured images and dynamically loop the categories on the homepage
 Dynamize the subscribe section on the homepage and the entire contact page
-Deploy the project on a server
 
 
 
