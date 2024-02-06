@@ -1,5 +1,7 @@
 # wordpress-theme-and-plugin-development
 This is my final project for the course WordPress for developers in Softuni
+
+Github url: https://github.com/InOutLuz/wordpress-theme-and-plugin-development
 Demo url: https://hands123.co.uk/softuni/
 
 It contains a custom WordPress theme and plugin. For the theme I'm using free html template designed by TemplateMo.
@@ -12,7 +14,7 @@ The custom theme options also provide an option to import all the necessary page
 The theme also has a child theme.
 
 The plugin registers a custom post type Games using native wordpress functions.
-Games custom post type have one attached custom taxonomy called: Genre.
+Games custom post type have one attached custom taxonomy called: Genre which has it's own archive page.
 The Games CPT has option to change the game prices in the single view via metabox which works with the post meta using native WP functions. It also has e description metabox registered with ACF which sets dynamically the additional information about the game.
 The plugin has a custom option to change the text inside the fallback SVG for the  posts/games that do not have featured image yet.
 It also has a hook in the functions.php which changes the Archive: Games title to Games.
