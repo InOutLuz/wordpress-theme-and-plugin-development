@@ -1,6 +1,32 @@
 # wordpress-theme-and-plugin-development
 This is my final project for the course WordPress for developers in Softuni
 
+It contains a custom WordPress theme and plugin. For the theme I'm using free html template designed by TemplateMo.
+There are separate templates for Home, Blog, Contact, Related Posts and Related Games pages.
+There are also different templates for Blogs Archive, Games Archive, Blog single view, and Games single view using the native WP_Query() for looping (The_Loop()) to loop trough the archives.
+The theme has separate files for header and footer, where in the header it has dynamic title and the necessary scripts and styles are enqueued in the header and the footer. 
+The Homepage is dynamically pulling out the latest 8 posts and the latest 6 games dynamically using wp query. The hero section titles can be changed dynamically from the theme options using custom options. The body titles can be also changed dynamically from the page options using ACF. 
+The theme has a registered menu and sidebar in the footer for the copyright. It also has a hook in the functions.php which changes the archive games title to Games.
+The custom theme options also provide an option to import all the necessary pages and set their templates using Ajax.
+The theme also has a child theme.
+
+The plugin registers a custom post type Games using native wordpress functions.
+Games custom post type have one attached custom taxonomy called: Genre.
+The Games CPT has option to change the game prices in the single view via metabox which works with the post meta using native WP functions. It also has e description metabox registered with ACF which sets dynamically the additional information about the game.
+The plugin has a custom option to change the text inside the fallback SVG for the  posts/games that do not have featured image yet.
+The games archive has a load more functionality instead of pagination using Ajax.
+The plugin registers a shortcode which accepts 3 attributes for day / month / year and displays a gif of a hourglass followed by text: "Sale ends on: {the date from attributes}"
+
+
+@To do:
+Think of appropriate function in the child theme functions.php
+Figure out how to set category featured images and dynamically loop the categories on the homepage
+Dynamize the subscribe section on the homepage and the entire contact page
+Deploy the project on a server
+
+
+
+
 <h1>Individual Project Assignment</h1>
 This is the Individual Project Assignment for the <strong>Web project based on WordPress - November 2023 @SoftUni</strong>.
 
